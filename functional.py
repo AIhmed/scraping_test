@@ -1,12 +1,16 @@
-num_str=['1','2','kdjf','3','ff','4']
-def some_str():
+
+
+def some_str(num_str):
     s=0
     for num in num_str:
         try:
             s+=int(num)
         except:
             pass
-    print(s)
+    return s
+
+
+
 def persistence(number):
     str_num=number
     n=1
@@ -18,15 +22,22 @@ def persistence(number):
             p=1
             n+=1
     return n
-inters=[0, 7, 7, 7, 5, 4, 9, 9, 0]
-def consecutive_sum():
+
+
+
+def consecutive_sum(inters):
     s=[]
     num_count=dict()
     for val in inters:
         num_count[str(val)]=inters.count(val)
     for keys,val in num_count.items():
         s.append(int(keys)*int(val))
-    print(s)
+    return s
 
-consecutive_sum()
-
+print(some_str(['2','42','ff']))
+print(some_str(['1','2','3','gf','ff','4']))
+print(persistence('999'))
+print(persistence('67'))
+print(consecutive_sum([0, 7, 7, 7, 5, 4, 9, 9, 0]))
+print(consecutive_sum([4, 4, 5, 6, 8, 8, 8]))
+print(consecutive_sum([-5, -5, 7, 7, 12, 0]))
